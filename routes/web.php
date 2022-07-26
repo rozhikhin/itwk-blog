@@ -36,3 +36,13 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin\Blog\Tag', 'prefix' =>
     Route::patch('/{id}', 'UpdateController')->name('admin.blog.tag.update')->where(['id' => '[0-9]+']);
     Route::delete('/{id}', 'DestroyController')->name('admin.blog.tag.destroy')->where(['id' => '[0-9]+']);
 });
+
+Route::group(['namespace' => '\App\Http\Controllers\Admin\Blog\Category', 'prefix' => 'admin/blog/category'], function (){
+    Route::get('', 'IndexController')->name('admin.blog.category.index');
+    Route::get('/{id}', 'ShowController')->name('admin.blog.category.show')->where(['id' => '[0-9]+']);;
+    Route::get('/create', 'CreateController')->name('admin.blog.category.create');
+    Route::post('', 'StoreController')->name('admin.blog.category.create');
+    Route::get('/{id}/edit', 'EditController')->name('admin.blog.category.edit')->where(['id' => '[0-9]+']);
+    Route::patch('/{id}', 'UpdateController')->name('admin.blog.category.update')->where(['id' => '[0-9]+']);
+    Route::delete('/{id}', 'DestroyController')->name('admin.blog.category.destroy')->where(['id' => '[0-9]+']);
+});
