@@ -16,4 +16,6 @@ yarn-error.log
 /.vscode
 /docker/postgres/data
 /docker/pgadmin
+/resources/views/AdminLTE-3.2.0
+.bash_history
 
