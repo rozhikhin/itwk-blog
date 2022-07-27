@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function (){
-    Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard'], function (){
+    Route::group(['namespace' => 'Dashboard', 'prefix' => ''], function (){
         Route::get('', 'IndexController')->name('admin.dashboard.index');
     });
 

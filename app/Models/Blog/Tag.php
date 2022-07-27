@@ -10,5 +10,8 @@ class Tag extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     public $timestamps = false;
+    protected $table = 'tags';
+    protected $guarded = false;
 }
