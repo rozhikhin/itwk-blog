@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', __('blog.dashboard') )
+
 @section('content')
     <!-- Main content -->
             <div class="row">

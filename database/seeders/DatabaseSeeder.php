@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
              'role_id' => '1',
          ]);
 
-        \App\Models\Blog\Tag::factory(10)->create();
-        \App\Models\Blog\Category::factory(10)->create();
+        \App\Models\Blog\Tag::factory(30)->create();
+        \App\Models\Blog\Category::factory(30)->create();
         \App\Models\Blog\Post::factory(100)->create();
         \App\Models\Blog\PostTag::factory(500)->create();
 
