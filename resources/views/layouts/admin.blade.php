@@ -46,7 +46,7 @@
     @include('admin.includes.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper position-relative ">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -67,13 +67,16 @@
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
-    <div class="container-fluid">
+    <div class="container-fluid mt-auto position-absolute mw-100 pr-3 pl-3" style="bottom: 0">
         <div class="row">
-            <footer class="main-footer w-100 m-2">
-                <strong>Copyright &copy; 2022 <a href="#">ITWK</a> </strong>
-                All rights reserved.
+            <footer class="card w-100 d-flex flex-row justify-content-between p-3 m-0" >
+                <div>
+                    <strong>Copyright &copy; 2022 <a href="#">ITWK</a> </strong>
+                    All rights reserved.
+                </div>
                 <div class="float-right d-none d-sm-inline-block">
-                    <b>Alexander Rozhikhin</b>
+                    <i class="far fa-envelope mr-1"></i>
+                    <a href="mailto:admin@itwk.ru"><b>Alexander Rozhikhin</b></a>
                 </div>
             </footer>
         </div>

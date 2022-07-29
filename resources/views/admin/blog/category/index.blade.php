@@ -42,8 +42,11 @@
                     <div class="row">
                         <div class="col-5">
                             <div class="dataTables_info"  role="status" aria-live="polite">
-                                Showing {{ ($categories->currentpage()-1)*$categories->perpage()+1 }} to {{ $categories->currentpage()*$categories->perpage() }}
-                                of  {{ $categories->total() }} entries
+                                {{ __('blog.paginate_info', [
+                                                    'start' => ($categories->currentpage()-1)*$categories->perpage()+1,
+                                                    'end' => $categories->currentpage()*$categories->perpage(),
+                                                    'total' => $categories->total(),
+                                                    ]) }}
                             </div>
                         </div>
                         <div class="col-7 d-flex justify-content-end">
