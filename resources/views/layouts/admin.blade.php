@@ -66,24 +66,22 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2022 <a href="#">ITWK</a> </strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Alexander Rozhikhin</b>
+    <div class="container-fluid">
+        <div class="row">
+            <footer class="main-footer w-100 m-2">
+                <strong>Copyright &copy; 2022 <a href="#">ITWK</a> </strong>
+                All rights reserved.
+                <div class="float-right d-none d-sm-inline-block">
+                    <b>Alexander Rozhikhin</b>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
+
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
