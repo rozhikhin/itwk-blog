@@ -24,32 +24,32 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
 
     Route::group(['namespace' => 'Blog\Post', 'prefix' => 'blog/post'], function (){
         Route::get('', 'IndexController')->name('admin.blog.post.index');
-        Route::get('/{id}', 'ShowController')->name('admin.blog.post.show')->where(['id' => '[0-9]+']);;
+        Route::get('/{post}', 'ShowController')->name('admin.blog.post.show')->where(['post' => '[0-9]+']);;
         Route::get('/create', 'CreateController')->name('admin.blog.post.create');
         Route::post('', 'StoreController')->name('admin.blog.store');
-        Route::get('/{id}/edit', 'EditController')->name('admin.blog.post.edit')->where(['id' => '[0-9]+']);
-        Route::patch('/{id}', 'UpdateController')->name('admin.blog.post.update')->where(['id' => '[0-9]+']);
-        Route::delete('/{id}', 'DestroyController')->name('admin.blog.post.destroy')->where(['id' => '[0-9]+']);
+        Route::get('/{post}/edit', 'EditController')->name('admin.blog.post.edit')->where(['post' => '[0-9]+']);
+        Route::patch('/{post}', 'UpdateController')->name('admin.blog.post.update')->where(['post' => '[0-9]+']);
+        Route::delete('/{post}', 'DestroyController')->name('admin.blog.post.destroy')->where(['post' => '[0-9]+']);
     });
 
     Route::group(['namespace' => 'Blog\Tag', 'prefix' => 'blog/tag'], function (){
         Route::get('', 'IndexController')->name('admin.blog.tag.index');
-        Route::get('/{id}', 'ShowController')->name('admin.blog.tag.show')->where(['id' => '[0-9]+']);;
+        Route::get('/{tag}', 'ShowController')->name('admin.blog.tag.show')->where(['tag' => '[0-9]+']);;
         Route::get('/create', 'CreateController')->name('admin.blog.tag.create');
         Route::post('', 'StoreController')->name('admin.blog.tag.store');
-        Route::get('/{id}/edit', 'EditController')->name('admin.blog.tag.edit')->where(['id' => '[0-9]+']);
-        Route::patch('/{id}', 'UpdateController')->name('admin.blog.tag.update')->where(['id' => '[0-9]+']);
-        Route::delete('/{id}', 'DestroyController')->name('admin.blog.tag.destroy')->where(['id' => '[0-9]+']);
+        Route::get('/{tag}/edit', 'EditController')->name('admin.blog.tag.edit')->where(['tag' => '[0-9]+']);
+        Route::patch('/{tag}', 'UpdateController')->name('admin.blog.tag.update')->where(['tag' => '[0-9]+']);
+        Route::delete('/{tag}', 'DestroyController')->name('admin.blog.tag.destroy')->where(['tag' => '[0-9]+']);
     });
 
     Route::group(['namespace' => 'Blog\Category', 'prefix' => 'blog/category'], function (){
         Route::get('', 'IndexController')->name('admin.blog.category.index');
-        Route::get('/{id}', 'ShowController')->name('admin.blog.category.show')->where(['id' => '[0-9]+']);;
+        Route::get('/{category}', 'ShowController')->name('admin.blog.category.show')->where(['id' => '[0-9]+']);;
         Route::get('/create', 'CreateController')->name('admin.blog.category.create');
         Route::post('', 'StoreController')->name('admin.blog.category.store');
-        Route::get('/{id}/edit', 'EditController')->name('admin.blog.category.edit')->where(['id' => '[0-9]+']);
-        Route::patch('/{id}', 'UpdateController')->name('admin.blog.category.update')->where(['id' => '[0-9]+']);
-        Route::delete('/{id}', 'DestroyController')->name('admin.blog.category.destroy')->where(['id' => '[0-9]+']);
+        Route::get('/{category}/edit', 'EditController')->name('admin.blog.category.edit')->where(['category' => '[0-9]+']);
+        Route::patch('/{category}', 'UpdateController')->name('admin.blog.category.update')->where(['category' => '[0-9]+']);
+        Route::delete('/{category}', 'DestroyController')->name('admin.blog.category.destroy')->where(['category' => '[0-9]+']);
     });
 
 });
