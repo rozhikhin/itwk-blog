@@ -39,6 +39,22 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.blog.tag.index') }}" class="nav-link {{ request()->routeIs('admin.blog.tag.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>
+                            {{ __('blog.tags') }}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.blog.post.index') }}" class="nav-link {{ request()->routeIs('admin.blog.post.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-clone"></i>
+                        <p>
+                            {{ __('blog.posts') }}
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

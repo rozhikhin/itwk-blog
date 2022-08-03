@@ -10,7 +10,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="title">{{ __('blog.title') }}</label>
-                        <input type="text" id="inputEstimatedBudget" class="form-control" name="title" value="{{ old('title'), '' }}">
+                        <input type="text" id="title" class="form-control" name="title" value="{{ old('title'), '' }}">
                     </div>
                     <p class="text-danger">
                         @if($errors->any())

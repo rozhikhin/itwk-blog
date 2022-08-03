@@ -44,8 +44,8 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
 
     Route::group(['namespace' => 'Blog\Category', 'prefix' => 'blog/category'], function (){
         Route::get('', 'IndexController')->name('admin.blog.category.index');
-        Route::get('/{category}', 'ShowController')->name('admin.blog.category.show')->where(['id' => '[0-9]+']);;
         Route::get('/create', 'CreateController')->name('admin.blog.category.create');
+        Route::get('/{category}', 'ShowController')->name('admin.blog.category.show')->where(['id' => '[0-9]+']);;
         Route::post('', 'StoreController')->name('admin.blog.category.store');
         Route::get('/{category}/edit', 'EditController')->name('admin.blog.category.edit')->where(['category' => '[0-9]+']);
         Route::patch('/{category}', 'UpdateController')->name('admin.blog.category.update')->where(['category' => '[0-9]+']);

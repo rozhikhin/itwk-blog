@@ -6,7 +6,8 @@
     <title>Itwk | @yield('title') </title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- IonIcons -->
@@ -59,28 +60,35 @@
         </div>
         <!-- /.content-header -->
         <div class="content">
-            <div class="container-fluid">
+        <!-- Modal - confirm delete -->
+            @include('admin.includes.confirm-delete')
+            <!-- /. Modal - confirm delete  -->
+            <div class="container-fluid mb-5">
                 @yield('content')
+            </div>
+            <!-- Main Footer -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0 position-absolute" style="bottom: 0; left: 0;">
+                        <footer class="card d-flex flex-row justify-content-between p-3 m-0 mr-2 ml-2 mt-3">
+                            <div>
+                                <strong>Copyright &copy; 2022 <a href="#">ITWK</a> </strong>
+                                All rights reserved.
+                            </div>
+                            <div class="float-right d-none d-sm-inline-block">
+                                <i class="far fa-envelope mr-1"></i>
+                                <a href="mailto:admin@itwk.ru"><b>Alexander Rozhikhin</b></a>
+                            </div>
+                        </footer>
+                    </div>
             </div>
         </div>
     </div>
+    </div>
     <!-- /.content-wrapper -->
 
-    <!-- Main Footer -->
-    <div class="container-fluid mt-auto position-absolute mw-100 pr-3 pl-3" style="bottom: 0">
-        <div class="row">
-            <footer class="card w-100 d-flex flex-row justify-content-between p-3 m-0" >
-                <div>
-                    <strong>Copyright &copy; 2022 <a href="#">ITWK</a> </strong>
-                    All rights reserved.
-                </div>
-                <div class="float-right d-none d-sm-inline-block">
-                    <i class="far fa-envelope mr-1"></i>
-                    <a href="mailto:admin@itwk.ru"><b>Alexander Rozhikhin</b></a>
-                </div>
-            </footer>
-        </div>
-    </div>
+
 
 </div>
 <!-- ./wrapper -->
@@ -92,6 +100,9 @@
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE -->
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+
+<script src="{{ asset('dist/js/app.js') }}"></script>
+
 
 </body>
 </html>

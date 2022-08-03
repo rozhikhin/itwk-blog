@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin\Blog\Category;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Blob\Category\StoreRequest;
+use App\Http\Requests\Admin\Blog\Category\StoreRequest;
 use App\Models\Blog\Category;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 
 class UpdateController extends Controller
@@ -19,7 +20,8 @@ class UpdateController extends Controller
             );
             return redirect(route('admin.blog.category.show', $category->id));
         } catch (QueryException $e) {
-            return Redirect::back()->withErrors(['msg' => $e->getMessage()])->withInput();
+            Log::error($e->getMessage(), ['ID' => $category->id, 'Title' => $category->title, 'object' => Category::class] );
+            return Redirect::back()->withErrors(['msg' => __('blog.update_error')])->withInput();
         }
     }
 }
