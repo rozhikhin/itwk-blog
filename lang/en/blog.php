@@ -4,7 +4,9 @@ return [
 //    Top
     'admin-panel' => 'Admin Panel',
     'dashboard' => 'Dashboard',
+
     'categories' => 'Categories',
+    'category' => 'Category',
     'categories_new' => 'New',
     'categories_add' => 'Create category',
     'categories_edit' => 'Edit category',
@@ -18,6 +20,13 @@ return [
 
     'posts' => 'Posts',
     'post_new' => 'New',
+    'post_add' => 'Create post',
+    'post_show' => 'Show post :name',
+    'post_edit' => 'Edit post',
+    'main_image' => 'Main image',
+    'choose_file' => 'Choose file',
+    'browse' => 'Browse',
+    'upload' => 'Upload',
 
 //  General for validation
     'save_error' => 'Can\'t save data.',
@@ -30,6 +39,7 @@ return [
     'close' => 'Close',
     'cancel' => 'Cancel',
     'title' => 'Title',
+    'content' => 'Content',
     'actions' => 'Actions',
     'delete_error' => 'Database error',
     'store_error' => 'Database error',
