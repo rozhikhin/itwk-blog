@@ -22,7 +22,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    nano
 
 
 
@@ -35,6 +36,11 @@ RUN docker-php-ext-install pdo pdo_pgsql pgsql pdo_mysql mysqli zip exif pcntl
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN  docker-php-ext-configure gd --with-freetype=/usr/include/ --with-webp=/usr/include/  --with-jpeg=/usr/include/
+
+
+RUN docker-php-ext-install gd
 
 # Copy existing application directory contents
 COPY . /var/www
