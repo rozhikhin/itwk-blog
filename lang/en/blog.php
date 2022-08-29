@@ -17,6 +17,7 @@ return [
     'tag_add' => 'Create tag',
     'tag_show' => 'Show tag: :name',
     'tag_edit' => 'Edit tag',
+    'select_tag' => 'Select a tags',
 
     'posts' => 'Posts',
     'post_new' => 'New',

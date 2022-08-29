@@ -30,5 +30,6 @@ $( document ).ready(function() {
 
     <!-- bs-custom-file-input -->
     bsCustomFileInput.init();
+
 });
 

@@ -71,10 +71,22 @@
                             @endif
                         </p>
                     </div>
+                    <div class="form-group">
+                        <label>{{ __('blog.tags') }}</label>
+                        <select name="tag_ids[]" class="select2" multiple="multiple" data-placeholder="{{ __('blog.select_tag') }}" style="width: 100%;">
+                            @foreach($tags as $tag)
+                                <option
+                                    value="{{ $tag->id }}"
+                                    {{ old('tag_ids') && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }}
+                                >{{$tag->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <button type="submit" class="btn btn-success">{{ __('blog.save') }}</button>
                 </form>
             </div>
 
         </div>
+
 @endsection

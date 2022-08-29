@@ -20,7 +20,7 @@ class PostFactory extends Factory
         return [
             'name' => fake()->sentence(),
             'content' => fake()->text(),
-            'image' => fake()->imageUrl,
+            'image' => 'default.jpg',
             'category_id' => DB::table('categories')->pluck('id')->random(),
             'author_id' => DB::table('users')->pluck('id')->random(),
             'likes' => random_int(0,500),

@@ -18,11 +18,14 @@ class StoreController extends Controller
     {
         try {
             $input = $storeRequest->validated();
+            $tagIds = $input['tag_ids'];
+            unset($input['tag_ids']);
+
             if ($storeRequest->file('image')) {
                 $imgName = $storeRequest->file('image')->store('', 'public');
                 $input['image'] = $imgName;
-                Post::firstOrCreate($input);
-
+                $post = Post::firstOrCreate($input);
+                $post->tags()->attach($tagIds);
                 $imageService->createThubnail($imgName);
 
                 return redirect(route('admin.blog.post.index'));
