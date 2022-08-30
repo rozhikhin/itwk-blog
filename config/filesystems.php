@@ -44,10 +44,10 @@ return [
             'throw' => false,
         ],
 
-        'thumb' => [
+        'images' => [
             'driver' => 'local',
-            'root' => storage_path('app/thumb'),
-            'url' => env('APP_URL').'/thumb',
+            'root' => storage_path('app/public/images'),
+            'url' => env('APP_URL').'/images',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -79,7 +79,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('thumbnails') => storage_path('app/thumb'),
     ],
 
 ];

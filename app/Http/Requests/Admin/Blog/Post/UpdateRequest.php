@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Blog\Category;
+namespace App\Http\Requests\Admin\Blog\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,8 +24,12 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-//            'title' => 'required|string|unique:categories,title'
-            'title' => 'required|string'
+            'name' => 'required|string',
+            'content' => 'required|string',
+            'image' => 'nullable|file',
+            'category_id' => 'required|integer|exists:categories,id',
+            'tag_ids' => 'nullable|array',
+            'tag_ids.*' => 'nullable|integer|exists:tags,id',
         ];
     }
 }
