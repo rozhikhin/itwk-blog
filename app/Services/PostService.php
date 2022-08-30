@@ -15,7 +15,7 @@ class PostService
         try {
 
             $tagIds = array_key_exists('tag_ids', $input) ? $input['tag_ids'] : [];
-            if($tagIds) {cd
+            if($tagIds) {
                 unset($input['tag_ids']);
             }
             $image = array_key_exists('image', $input) ? $input['image'] : '';
