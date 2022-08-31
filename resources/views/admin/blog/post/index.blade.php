@@ -7,13 +7,12 @@
                 <a href="{{ route('admin.blog.post.create') }}" class="btn btn-success">{{ __('blog.post_new') }}</a>
             </div>
 
-            @error('index_error_msg')
-                <div class="alert alert-danger" role="alert">
-                    {{ $message }}
-                </div>
-            @enderror
-
             <div class="card-body">
+                @error('index_error_msg')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                @enderror
                 <div class="dataTables_wrapper"><div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
                                 <thead>
                                     <tr>

@@ -21,7 +21,7 @@ class UpdateController extends Controller
             return redirect(route('admin.blog.category.show', $category->id));
         } catch (QueryException $e) {
             Log::error($e->getMessage(), ['ID' => $category->id, 'Title' => $category->title, 'object' => Category::class] );
-            return Redirect::back()->withErrors(['msg' => __('blog.update_error')])->withInput();
+            return Redirect::back()->withErrors(['index_error_msg' => __('blog.update_error')])->withInput();
         }
     }
 }

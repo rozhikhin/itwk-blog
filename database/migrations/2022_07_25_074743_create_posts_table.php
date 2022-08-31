@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->comment('Заголовок поста');
             $table->text('content')->comment('Содержимое поста');
-            $table->string('image')->comment( 'Ссылка на изображение');
+            $table->string('image')->nullable()->comment( 'Ссылка на изображение');
             $table->unsignedBigInteger('category_id')->comment('Ссылка на таблицу категорий');
             $table->unsignedBigInteger('author_id')->nullable()->comment('Ссылка на таблицу с пользователями');
             $table->unsignedBigInteger('likes')->nullable()->comment('Счетчик лайков (Нравится)');

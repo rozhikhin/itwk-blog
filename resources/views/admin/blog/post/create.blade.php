@@ -11,9 +11,12 @@
     </style>
     <div class="row">
         <div class="card col-12">
-
             <div class="card-body">
-
+                @error('index_error_msg')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                @enderror
                 <form action="{{ route('admin.blog.post.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">

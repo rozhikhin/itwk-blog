@@ -21,7 +21,7 @@ class StoreController extends Controller
             return redirect(route('admin.blog.category.index'));
         } catch (QueryException $e) {
             Log::error($e->getMessage(), ['object' => Category::class] );
-            return Redirect::back()->withErrors(['msg' => __('blog.store_error')])->withInput();
+            return Redirect::back()->withErrors(['index_error_msg' => __('blog.store_error')])->withInput();
         }
     }
 }

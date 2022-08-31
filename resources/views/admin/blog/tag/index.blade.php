@@ -8,6 +8,11 @@
             </div>
 
             <div class="card-body">
+                @error('index_error_msg')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                @enderror
                 <div class="dataTables_wrapper">
                     <div class="row">
                         <div class="col-sm-12">
