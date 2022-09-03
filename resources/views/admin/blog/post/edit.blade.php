@@ -8,8 +8,27 @@
         input#inputFile {
             cursor: pointer;
         }
+        .edit-image-preview {
+            position: relative;
+        }
+        .edit-image-preview .image-remove-btn {
+            display: block;
+            position: absolute;
+            visibility: hidden;
+            width: 150px;
+            bottom: 25px;
+            left:175px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .edit-image-preview .image-remove-btn:hover {
+            visibility: visible;
+        }
+        .edit-image-preview img:hover ~ .image-remove-btn {
+            visibility: visible;
+        }
     </style>
-    <div class="row">
+    <div class="row mb-5">
         <div class="card col-12">
             <div class="card-body">
                 @error('index_error_msg')
@@ -27,6 +46,15 @@
                             @error('name') {{ $message }} @enderror
                         </p>
                     </div>
+                    @if($post->image)
+                        <div class="form-group edit-image-preview">
+                            <img src="{{ asset('storage/images/thumb') . '/' . $post->image }}" alt="Prewiew image">
+                            <button data-href="{{ route('admin.blog.post.removeImage', $post->id) }}" type="button" class="btn btn-block bg-gradient-danger image-remove-btn"  data-image-remove="1" data-post-id="{{ $post->id }}" >Удалить</button>
+                            <p class="text-danger">
+                                <span class="image-remove-error"></span>
+                            </p>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label for="content">{{ __('blog.content') }}</label>
                         <textarea id="content" name="content" >

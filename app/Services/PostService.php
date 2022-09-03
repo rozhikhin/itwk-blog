@@ -47,7 +47,5 @@ class PostService
             Log::error($e->getMessage(), ['object' => Post::class] );
             return Redirect::back()->withErrors(['msg' => __('blog.update_error')])->withInput();
         }
-
     }
-
 }

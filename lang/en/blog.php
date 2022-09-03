@@ -43,6 +43,7 @@ return [
     'content' => 'Content',
     'actions' => 'Actions',
     'delete_error' => 'Database error',
+    'delete_image_error' => 'Error when delete image',
     'store_error' => 'Database error',
     'update_error' => 'Database error',
     'confirm-delete-title' => 'Remove data',

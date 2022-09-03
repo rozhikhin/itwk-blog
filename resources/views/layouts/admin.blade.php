@@ -67,7 +67,7 @@
         <!-- Modal - confirm delete -->
             @include('admin.includes.confirm-delete')
             <!-- /. Modal - confirm delete  -->
-            <div class="container-fluid mb-5">
+            <div class="container-fluid">
                 @yield('content')
             </div>
             <!-- Main Footer -->
@@ -111,10 +111,10 @@
 <!-- Summernote -->
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 
-<script src="{{ asset('dist/js/app.js') }}"></script>
+<script src="{{ asset('dist/js/app.js?v=8') }}"></script>
 
 <script>
-    $('.select2').select2();
+
 </script>
 </body>
 </html>

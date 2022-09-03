@@ -29,6 +29,7 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
         Route::post('', 'StoreController')->name('admin.blog.post.store');
         Route::get('/{post}/edit', 'EditController')->name('admin.blog.post.edit')->where(['post' => '[0-9]+']);
         Route::patch('/{post}', 'UpdateController')->name('admin.blog.post.update')->where(['post' => '[0-9]+']);
+        Route::patch('/remove-image/{post}', 'RemoveImageController')->name('admin.blog.post.removeImage')->where(['post' => '[0-9]+']);
         Route::delete('/{post}', 'DestroyController')->name('admin.blog.post.destroy')->where(['post' => '[0-9]+']);
     });
 
