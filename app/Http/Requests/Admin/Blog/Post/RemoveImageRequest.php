@@ -25,7 +25,6 @@ class RemoveImageRequest extends FormRequest
     {
         return [
             'isRemoveImage' => 'nullable|integer',
-//            'post' => 'nullable|integer',
         ];
     }
 }

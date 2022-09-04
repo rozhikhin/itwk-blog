@@ -111,7 +111,7 @@
 <!-- Summernote -->
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 
-<script src="{{ asset('dist/js/app.js?v=8') }}"></script>
+<script src="{{ asset('dist/js/app.js?v=9') }}"></script>
 
 <script>
 

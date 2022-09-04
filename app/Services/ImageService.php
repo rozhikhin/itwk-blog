@@ -2,6 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\Blog\Post;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class ImageService
@@ -29,5 +32,31 @@ class ImageService
         imagedestroy($image_p);
         imagedestroy($image);
 
+    }
+
+    public function removeImage($removeImageRequest, $post)
+    {
+        try {
+            if ($removeImageRequest->has('isRemoveImage')) {
+                if (Storage::disk('images')->exists($post->image)) {
+                    Storage::disk('images')->delete($post->image);
+                }
+                if (Storage::disk('images')->exists('thumb/' . $post->image)) {
+                    Storage::disk('images')->delete('thumb/' . $post->image);
+                }
+                $post->image = null;
+                $post->save();
+                return response()->json([
+                    'result' => 'success',
+                    'post_id' => $post->id,
+                ]);
+            }
+        } catch (QueryException $e) {
+            Log::error($e->getMessage(), ['ID' => $post->id, 'Title' => $post->title, 'object' => Post::class] );
+            return response()->json([
+                'error' => 'true',
+                'message' => __('blog.delete_image_error'),
+            ]);
+        }
     }
 }
