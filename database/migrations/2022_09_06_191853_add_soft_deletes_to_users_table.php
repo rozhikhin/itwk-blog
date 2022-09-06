@@ -14,11 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->nullable()->comment('Ссылка на таблицу с ролями');
-
-            $table->index('role_id', 'user_role_id_idx');
-            $table->foreign('role_id', 'user_role_id_fk')->references('id')->on('roles');
-
+            $table->softDeletes();
         });
     }
 
@@ -30,9 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropIndex('user_role_id_idx');
-            $table->dropForeign('user_role_id_fk');
-            $table->dropColumn('role_id');
+            $table->dropSoftDeletes();
         });
     }
 };

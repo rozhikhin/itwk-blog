@@ -17,13 +17,13 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
-    'users' => 'Users',
-    'user_new' => 'New',
-    'user_name' => 'Name',
+    'users' => 'Пользователи',
+    'user_new' => 'Новый пользователь',
+    'user_name' => 'Имя',
     'user_email' => 'Email',
-    'user_role' => 'Role',
-    'user_actions' => 'Actions',
-    'paginate_info' => 'Showing :start to :end of  :total entries',
-    'delete_error' => 'Database error',
+    'user_role' => 'Роль',
+    'user_actions' => 'Действия',
+    'paginate_info' => 'Показано с :start по :end из :total элементов',
+    'delete_error' => 'При попытке удаления возникла ошибка',
 
 ];
