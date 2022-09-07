@@ -34,7 +34,11 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->role->title }}</td>
+                                        <td>
+                                            @if ($user->role)
+                                                {{ $user->role->title }}
+                                            @endif
+                                        </td>
                                         <td style="width: 100px;">
                                             <div class="d-flex align-items-center justify-content-between mr-1 ml-1">
                                                 <a href="{{ route('admin.user.show', $user->id) }}"

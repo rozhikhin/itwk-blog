@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
+use App\Models\User;
 
 class EditController extends Controller
 {
-    public function __invoke(Post $post)
+    public function __invoke(User $user)
     {
-//        $categories = Category::all();
-//        $tags = Tag::all();
-//        return view('admin.blog.post.edit', compact('categories', 'tags', 'post'));
+        $roles = Role::all();
+        return view('admin.user.edit', compact('user', 'roles'));
     }
 }
