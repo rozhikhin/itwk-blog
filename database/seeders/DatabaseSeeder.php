@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Админитсратор системы'
         ]);
          \App\Models\User::factory()->create([
-             'name' => 'Админитсратор',
+             'name' => 'Администратор',
              'email' => 'admin@itwk.ru',
              'password' => Hash::make('admin'),
              'role_id' => '1',

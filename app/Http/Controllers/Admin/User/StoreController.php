@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\User\UodateRequest;
-use App\Models\Blog\Post;
+use App\Http\Requests\Admin\User\StoreRequest;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +14,7 @@ use Illuminate\Support\Str;
 
 class StoreController extends Controller
 {
-    public function __invoke(UodateRequest $storeRequest)
+    public function __invoke(StoreRequest $storeRequest)
     {
         $input = $storeRequest->validated();
         try {

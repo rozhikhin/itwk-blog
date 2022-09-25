@@ -11,6 +11,8 @@
                 @enderror
                 <form action="{{ route('admin.user.update', $user->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('PATCH')
+                    <input type="hidden" name="user_id" value="{{ $user->id }}">
                     <div class="form-group">
                         <label for="name">{{ __('auth.user_name') }}</label>
                         <input type="text" id="name" class="form-control" name="name" value="{{ old('name', $user->name) }}">

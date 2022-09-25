@@ -21,7 +21,7 @@
                                         <td>{{ $category->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>ID</td>
+                                        <td>{{ __('blog.title') }}</td>
                                         <td>{{ $category->title }}</td>
                                     </tr>
                                 </tbody>
