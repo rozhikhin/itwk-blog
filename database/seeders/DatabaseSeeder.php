@@ -17,17 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\Role::factory()->create([
-            'title' => 'Админитсратор',
-            'description' => 'Админитсратор системы'
-        ]);
-         \App\Models\User::factory()->create([
-             'name' => 'Администратор',
-             'email' => 'admin@itwk.ru',
-             'password' => Hash::make('admin'),
-             'role_id' => '1',
-         ]);
-
         \App\Models\Blog\Tag::factory(30)->create();
         \App\Models\Blog\Category::factory(30)->create();
         \App\Models\Blog\Post::factory(100)->create();

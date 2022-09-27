@@ -17,9 +17,19 @@ return new class extends Migration
             $table->id();
             $table->string('title')->comment('Название роли');
             $table->string('description')->comment('Описание роли');
-
+            $table->timestamps();
+            $table->softDeletes();
             $table->comment('Таблица ролей');
         });
+
+        \App\Models\Role::factory()->create([
+            'title' => 'Администратор',
+            'description' => 'Администратор системы'
+        ]);
+        \App\Models\Role::factory()->create([
+            'title' => 'Пользователь',
+            'description' => 'Пользователь системы'
+        ]);
     }
 
     /**

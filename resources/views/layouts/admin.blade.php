@@ -33,17 +33,25 @@
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="/" class="nav-link">Сайт</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{ route('admin.dashboard.index') }}" class="nav-link">{{ __('blog.admin-panel') }}</a>
-            </li>
-        </ul>
+        <div class="col-12 d-flex justify-content-between">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/" class="nav-link">Сайт</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ route('admin.dashboard.index') }}" class="nav-link">{{ __('blog.admin-panel') }}</a>
+                </li>
+            </ul>
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button class="btn btn-outline-dark">{{__('auth.logout')}}</button>
+            </form>
+
+        </div>
+
 
     </nav>
     <!-- /.navbar -->

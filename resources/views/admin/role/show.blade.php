@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', __('auth.user_show', ['name' => $user->name]) )
+@section('title', __('auth.role_show', ['title' => $role->title]) )
 @section('content')
     <div class="row">
         <div class="card col-12">
             <div class="card-header d-flex">
-                <a href="{{ route('admin.user.edit', $user->id)}}" class="btn btn-success">{{ __('auth.edit') }}</a>
-                @if(!in_array($user->id, [1]))
-                    <form action="{{ route('admin.user.destroy', $user->id) }}" method="post">
+                <a href="{{ route('admin.role.edit', $role->id)}}" class="btn btn-success">{{ __('auth.edit') }}</a>
+                @if(!in_array($role->id, [1, 2]))
+                    <form action="{{ route('admin.role.destroy', $role->id) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="button" class="btn btn-danger ml-2" data-toggle="modal" data-target="#confirm-delete">{{ __('auth.destroy') }}</button>
@@ -20,19 +20,15 @@
                                 <tbody>
                                     <tr>
                                         <td>ID</td>
-                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $role->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>{{ __('auth.user_name') }}</td>
-                                        <td>{{ $user->name }}</td>
+                                        <td>{{ __('auth.role_title') }}</td>
+                                        <td>{{ $role->title }}</td>
                                     </tr>
                                     <tr>
-                                        <td>{{ __('auth.user_email') }}</td>
-                                        <td>{{ $user->email }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ __('auth.user_role') }}</td>
-                                        <td>{{ $user->role->title }}</td>
+                                        <td>{{ __('auth.role_desc') }}</td>
+                                        <td>{{ $role->description }}</td>
                                     </tr>
                                 </tbody>
                             </table>

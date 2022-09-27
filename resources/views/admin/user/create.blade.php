@@ -42,7 +42,7 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-success">{{ __('blog.save') }}</button>
+                    <button type="submit" class="btn btn-success">{{ __('auth.save') }}</button>
                 </form>
             </div>
 

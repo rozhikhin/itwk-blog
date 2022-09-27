@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,12 +15,18 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->nullable()->comment('Ссылка на таблицу с ролями');
+            $table->unsignedBigInteger('role_id')->default(2)->comment('Ссылка на таблицу с ролями');
 
             $table->index('role_id', 'user_role_id_idx');
             $table->foreign('role_id', 'user_role_id_fk')->references('id')->on('roles');
 
         });
+        \App\Models\User::factory()->create([
+            'name' => 'Администратор',
+            'email' => 'admin@localhost.local',
+            'password' => Hash::make('admin'),
+            'role_id' => '1',
+        ]);
     }
 
     /**

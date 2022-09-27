@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function (){
+Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function (){
     Route::group(['namespace' => 'Dashboard', 'prefix' => ''], function (){
         Route::get('', 'IndexController')->name('admin.dashboard.index');
     });
@@ -61,6 +61,16 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
         Route::get('/{user}/edit', 'EditController')->name('admin.user.edit')->where(['user' => '[0-9]+']);
         Route::patch('/{user}', 'UpdateController')->name('admin.user.update')->where(['user' => '[0-9]+']);
         Route::delete('/{user}', 'DestroyController')->name('admin.user.destroy')->where(['user' => '[0-9]+']);
+    });
+
+    Route::group(['namespace' => 'Role', 'prefix' => 'role'], function (){
+        Route::get('', 'IndexController')->name('admin.role.index');
+        Route::get('/create', 'CreateController')->name('admin.role.create');
+        Route::get('/{role}', 'ShowController')->name('admin.role.show')->where(['role' => '[0-9]+']);
+        Route::post('', 'StoreController')->name('admin.role.store');
+        Route::get('/{role}/edit', 'EditController')->name('admin.role.edit')->where(['role' => '[0-9]+']);
+        Route::patch('/{role}', 'UpdateController')->name('admin.role.update')->where(['role' => '[0-9]+']);
+        Route::delete('/{role}', 'DestroyController')->name('admin.role.destroy')->where(['role' => '[0-9]+']);
     });
 
 });
