@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
 use App\Mail\User\CreatePasswordMail;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -22,8 +23,9 @@ class StoreController extends Controller
         try {
             $password = Str::random();
             $input['password'] = Hash::make($password);
-            User::firstOrCreate(['email' => $input['email']], $input);
+            $user = User::firstOrCreate(['email' => $input['email']], $input);
             Mail::to($input['email'])->send(new CreatePasswordMail($password));
+            event(new Registered($user));
             return redirect(route('admin.user.index'));
         } catch (QueryException $e) {
             Log::error($e->getMessage(), ['object' => User::class] );

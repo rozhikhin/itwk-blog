@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function (){
+Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function (){
     Route::group(['namespace' => 'Dashboard', 'prefix' => ''], function (){
         Route::get('', 'IndexController')->name('admin.dashboard.index');
     });
@@ -76,6 +76,6 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin',
 });
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
