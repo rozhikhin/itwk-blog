@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 @section('title', __('blog.categories_edit') )
+@section('breadcrumb')
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('blog.admin-panel') }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.blog.category.index') }}">{{ __('blog.categories') }}</a></li>
+        <li class="breadcrumb-item active">{{ __('blog.categories_edit') }}</li>
+    </ol>
+@endsection
 @section('content')
     <div class="row">
         <div class="card col-12">

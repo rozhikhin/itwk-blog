@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 @section('title', __('auth.role_add') )
+@section('breadcrumb')
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('blog.admin-panel') }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.role.index') }}">{{ __('auth.roles') }}</a></li>
+        <li class="breadcrumb-item active">{{ __('auth.role_add') }}</li>
+    </ol>
+@endsection
 @section('content')
     <div class="row">
         <div class="card col-12">

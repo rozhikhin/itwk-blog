@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 @section('title', __('blog.post_edit') )
+@section('breadcrumb')
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('blog.admin-panel') }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.blog.post.index') }}">{{ __('blog.posts') }}</a></li>
+        <li class="breadcrumb-item active">{{ __('blog.post_edit') }}</li>
+    </ol>
+@endsection
 @section('content')
     <style>
         .custom-file .custom-file-label::after {

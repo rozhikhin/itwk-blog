@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 @section('title', __('auth.user_show', ['name' => $user->name]) )
+@section('breadcrumb')
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('blog.admin-panel') }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">{{ __('auth.users') }}</a></li>
+        <li class="breadcrumb-item active">{{ __('auth.user_show', ['name' => $user->name]) }}</li>
+    </ol>
+@endsection
 @section('content')
     <div class="row">
         <div class="card col-12">

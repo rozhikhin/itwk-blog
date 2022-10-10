@@ -45,4 +45,5 @@ return [
     'save_error' => 'Can\'t save data.',
     'save' => 'Save',
 
+    'more_info' => 'More info'
 ];
